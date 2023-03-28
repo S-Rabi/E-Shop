@@ -1,13 +1,170 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+.top-navbar {
+  height: 44px;
+  background-color: #202020;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding: 10px 40px;
+}
+.navbar {
+  /* background-color: #1c2938; */
+  background-color: #ffffff;
+  text-transform: uppercase;
+  color: tomato;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+/* .nav-text:hover {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: #f1bc31;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -o-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+  z-index: -1;
+} */
+.shopping-cart-btn {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.button {
+  width: 220px;
+  height: 50px;
+  background: #111827;
+  outline: 1px solid teal;
+  font-weight: bold;
+  color: white;
+  margin: 20px 0;
+}
+
+.button:active {
+  box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* The shopping cart css start from here */
+.cart-container {
+  display: flex;
+  max-width: 1024px;
+  margin: 20px auto;
+  position: relative;
+}
+.order-item {
+  width: 60%;
+}
+
+.hr {
+  color: red;
+  margin-bottom: 20px;
+}
+.ordered-items {
+  height: 240px;
+}
+.ordered-items-img {
+  width: 200px;
+  height: 150px;
+}
+
+.item-description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+  margin: 10px 0;
+}
+.order-btn {
+  width: 40px;
+  height: 35px;
+  color: gray;
+  border: 1px solid gray;
+}
+.order-btn-quantity {
+  color: black;
+  width: 60px;
+}
+.btn-40,
+.btn-40 *,
+.btn-40 :after,
+.btn-40 :before,
+.btn-40:after,
+.btn-40:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.btn-40 {
+  background-color: #202839;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, sans-serif, Roboto;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.btn-40:disabled {
+  cursor: default;
+}
+.btn-40:-moz-focusring {
+  outline: auto;
+}
+.btn-40 svg {
+  display: block;
+  vertical-align: middle;
+}
+.btn-40 [hidden] {
+  display: none;
+}
+.btn-40 {
+  outline: 1px solid orange;
+  box-sizing: border-box;
+  display: block;
+  font-weight: 600;
+  overflow: hidden;
+  padding: 1.5rem 4.5rem;
+  position: relative;
+  text-transform: uppercase;
+}
+.btn-40 .new,
+.btn-40 .old {
+  transition: transform 0.3s;
+}
+.btn-40 .old {
+  display: grid;
+  inset: 0;
+  place-content: center;
+  position: absolute;
+}
+.btn-40:hover .old {
+  transform: translateY(100%);
+}
+.btn-40 .new {
+  background: #f1bc31;
+  color: #202839;
+  border: 1px solid white;
+  display: grid;
+  inset: 0;
+  place-content: center;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-100%);
+}
+.btn-40:hover .new {
+  transform: translateX(0);
 }
