@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import CartContext from "../CartContext";
+import {CartContext} from "../CartContext";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaShoppingCart } from "react-icons/fa";
 import { BiArrowBack } from "react-icons/bi";

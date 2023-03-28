@@ -1,9 +1,14 @@
 import React from "react";
-// import TotalContext from "./totalContext";
+import { useContext } from "react";
+import { CartContext } from "../CartContext";
 
 export default function Basic() {
-  // const { totalItems, totalPrice } = useContext(TotalContext);
-  // console.log("Total items is =>", totalItems);
+  const {
+    cartItem
+  } = useContext(CartContext);
+  console.log("cartItem", cartItem);
+  const totalItems = cartItem.reduce((total, item) => total + item.quantity, 0);
+  const totalPrice = cartItem.reduce((total, item) => total + item.quantity * item.price, 0);
 
   return (
     <div>
@@ -124,10 +129,10 @@ export default function Basic() {
               </h2>
               <div className="order-container">
                 <div className="ordered-details flex justify-between w-full my-3 text-[17px] font-medium ">
-                  <p>Total Item:</p>
+                  <p>Total Items: {totalItems}</p>
                 </div>
                 <div className="ordered-details flex justify-between w-full my-3 text-[18px] font-medium ">
-                  <p>Total Price is: $</p>
+                  <p>Total Price is: {totalPrice}€</p>
                 </div>
                 <p className="text-end my-3">
                   (Prices are inclusive all taxes)
