@@ -17,18 +17,18 @@ const Nav = () => {
         </div>
       </div>
       <nav className="navbar">
-        <Link to={"/"} className="flex items-center">
+        <div className="flex items-center align-middle">
           <img src={Logo} alt="" className="logo w-[60px] p-2 rounded" />
-          <h1 className="bg-[#f1bc31]">HOME</h1>
+          <Link to='/'><h1 className="">HOME</h1></Link>
           <div className="nav-text flex justify-around w-[300px]  text-[#4d4d4d]">
-            <Link to={"/"} className="flex items-center">
+            <Link to={"/"} className="flex items-center  bg-black">
               <h1>about</h1>
             </Link>
             <Link to={"/"} className="flex items-center">
               <h1>contact</h1>
             </Link>{" "}
           </div>
-        </Link>
+        </div>
         <Link to={"/cart"}>
           <div className=" flex items-center text-[25px]	">
             <AiFillShopping />
