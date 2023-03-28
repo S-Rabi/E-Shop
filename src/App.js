@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Nav from "./components/Nav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Products from "./components/Products";
-import { CartProvider } from "./CartContext";
+import CartProvider from "./CartContext";
 import Cart from "./components/Cart";
 import AddressForm from "./components/AddressForm";
 import Payment from "./components/Payment";

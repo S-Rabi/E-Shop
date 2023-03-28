@@ -1,9 +1,15 @@
 import { createContext, useState } from "react";
 
-const CartContext = createContext();
+export const CartContext = createContext();
 
 export function CartProvider({ children }) {
   const [cartItem, setCartItem] = useState([]);
+  const [ totalItems, setTotalItems ] = useState(0);
+  const [ totalPrice, setTotalPrice ] = useState(0);
+  const [ discounted, setDiscounted ] = useState(0);
+  // const [ couponInput, setCouponInput ] = useState("");
+  // const [ couponApplied, setCouponApplied ] = useState(false);
+
 
   const addToCart = (el) => {
     const itemsInCart = cartItem.find((i) => i.id === el.id);
@@ -32,6 +38,8 @@ export function CartProvider({ children }) {
         setCartItem,
         addToCart,
         updateItem,
+        discounted,
+        setDiscounted
       }}
     >
       {children}
@@ -39,4 +47,4 @@ export function CartProvider({ children }) {
   );
 }
 
-export default CartContext;
+export default CartProvider;

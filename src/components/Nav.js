@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AiFillShopping } from "react-icons/ai";
-import CartContext from "../CartContext";
+import {CartContext} from "../CartContext";
 import { useContext } from "react";
 import Logo from "./img/logo.png";
 

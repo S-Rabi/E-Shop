@@ -1,6 +1,6 @@
 import React from "react";
 import { AiFillShopping } from "react-icons/ai";
-import CartContext from "../CartContext";
+import {CartContext} from "../CartContext";
 import { useContext } from "react";
 
 function Card({ el }) {
