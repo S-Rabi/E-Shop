@@ -4,11 +4,17 @@ import { CartContext } from "../CartContext";
 
 export default function Basic() {
   const {
-    cartItem
+    cartItem,
+    discounted,
   } = useContext(CartContext);
   console.log("cartItem", cartItem);
   const totalItems = cartItem.reduce((total, item) => total + item.quantity, 0);
   const totalPrice = cartItem.reduce((total, item) => total + item.quantity * item.price, 0);
+  console.log("totalItems", totalItems);
+  console.log("totalPrice", totalPrice);
+
+  const finalPrice = discounted ? discounted : totalPrice;
+
 
   return (
     <div>
@@ -134,6 +140,9 @@ export default function Basic() {
                 <div className="ordered-details flex justify-between w-full my-3 text-[18px] font-medium ">
                   <p>Total Price is: {totalPrice}€</p>
                 </div>
+                {discounted>0 && <div className="ordered-details flex justify-between w-full my-3 text-[18px] font-medium ">
+                  <p>Final Price is: {finalPrice}€</p>
+                </div>}
                 <p className="text-end my-3">
                   (Prices are inclusive all taxes)
                 </p>
