@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { Scrollbars } from "react-custom-scrollbars-2";
 
 function Cart() {
+  const cart = useContext(CartContext);
   const { cartItem, setCartItem } = useContext(CartContext);
   const [totalItems, setTotalItems] = useState(0);
   const [couponInput, setCouponInput] = useState("");
@@ -19,7 +20,7 @@ function Cart() {
         cartItem.reduce(
           (total, item) => total + item.price * item.quantity,
           0
-        ) + 5
+        )
       ).toFixed(2)
     );
     const items = cartItem.reduce((total, item) => total + item.quantity, 0);
@@ -55,10 +56,11 @@ function Cart() {
 
   // Apply Coupon
   const applyCoupon = () => {
-    if (couponInput === "Behnam" && !couponApplied) {
+    if (couponInput === "B" && !couponApplied) {
       const discountedPrice = (totalPrice * 0.8).toFixed(2);
       setTotalPrice(discountedPrice);
       setCouponApplied(true);
+      cart.setDiscounted(discountedPrice);       
     }
   };
 
@@ -158,14 +160,11 @@ function Cart() {
             </h2>
             <div className="order-container">
               <div className="ordered-details flex justify-between w-full my-3 text-[17px] font-medium ">
-                <p>Total Item </p> <p>{totalItems}</p>
+                <p>Amount: {totalItems} items</p>
               </div>
               <div className="ordered-details flex justify-between w-full my-3 text-[18px] font-medium ">
-                <p>Total Price Plus Shipping</p>
-                <p>{totalPrice} $</p>
+                <p>Total Price: {totalPrice}€</p>
               </div>
-              <p className="text-end mt-4">Shipping Fee 5 $</p>
-
               <p className="text-end my-3">(Prices are inclusive all taxes)</p>
             </div>
             <Link to="/checkout">
