@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Nav from "./components/Nav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Products from "./components/Products";
+import Home from "./components/Home";
 import CartProvider from "./CartContext";
 import Cart from "./components/Cart";
 import AddressForm from "./components/AddressForm";
@@ -14,7 +14,7 @@ function App() {
         <BrowserRouter>
           <Nav />
           <Routes>
-            <Route path="/" element={<Products />} />
+            <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<AddressForm />} />
             <Route path="/pay" element={<Payment />} />
