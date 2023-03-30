@@ -10,8 +10,10 @@ import { CartContext } from "../CartContext";
 import { useContext } from "react";
 import Logo from "../assets/1.png";
 
-const Nav = ({ setSearch }) => {
-  const { cartItem } = useContext(CartContext);
+const Nav = () => {
+  const { cartItem, filter, setFilter } = useContext(CartContext);
+
+
 
   return (
     <>
@@ -73,7 +75,8 @@ const Nav = ({ setSearch }) => {
               type="text"
               id="search"
               placeholder="Search something.."
-              onChange={(e) => setSearch(e.target.value)}
+              value={filter}
+              onChange={(e) => setFilter(e.target.value)}
             />
           </div>
         </div>

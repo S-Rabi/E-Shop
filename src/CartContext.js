@@ -7,6 +7,7 @@ export function CartProvider({ children }) {
   const [ totalItems, setTotalItems ] = useState(0);
   const [ totalPrice, setTotalPrice ] = useState(0);
   const [ discounted, setDiscounted ] = useState(0);
+  const [filter, setFilter] = useState("");
   // const [ couponInput, setCouponInput ] = useState("");
   // const [ couponApplied, setCouponApplied ] = useState(false);
 
@@ -39,7 +40,9 @@ export function CartProvider({ children }) {
         addToCart,
         updateItem,
         discounted,
-        setDiscounted
+        setDiscounted,
+        filter,
+        setFilter,
       }}
     >
       {children}
