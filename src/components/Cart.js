@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import {CartContext} from "../CartContext";
+import { CartContext } from "../CartContext";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaShoppingCart } from "react-icons/fa";
 import { BiArrowBack } from "react-icons/bi";
+import { TbArrowBack } from "react-icons/tb";
+
 import { Link } from "react-router-dom";
 import { Scrollbars } from "react-custom-scrollbars-2";
 
@@ -16,12 +18,9 @@ function Cart() {
 
   useEffect(() => {
     setTotalPrice(
-      (
-        cartItem.reduce(
-          (total, item) => total + item.price * item.quantity,
-          0
-        )
-      ).toFixed(2)
+      cartItem
+        .reduce((total, item) => total + item.price * item.quantity, 0)
+        .toFixed(2)
     );
     const items = cartItem.reduce((total, item) => total + item.quantity, 0);
     setTotalItems(items);
@@ -60,17 +59,17 @@ function Cart() {
       const discountedPrice = (totalPrice * 0.8).toFixed(2);
       setTotalPrice(discountedPrice);
       setCouponApplied(true);
-      cart.setDiscounted(discountedPrice);       
+      cart.setDiscounted(discountedPrice);
     }
   };
 
   if (cartItem.length === 0)
     return (
-      <div className="m-4 p-4">
+      <div className="m-5 p-4 font-medium">
         <h3>You Have {totalItems} Items In The Shopping Cart</h3>
         <Link to="/">
-          <button className="bg-sky-300 mt-4 py-4 px-6 rounded font-medium">
-            BACK TO SHOPPING
+          <button className="text-white bg-[#4cbead] flex flex-row  items-center py-3 px-5 m-4 rounded hover:bg-[#f1bc31] hover:font-medium">
+            <TbArrowBack className="mr-2" /> BACK TO SHOPPING
           </button>
         </Link>
       </div>
@@ -93,7 +92,7 @@ function Cart() {
           <button className="button">Payment details</button>
         </div>
 
-        <div className="cart-container">
+        <div className="cart-container ">
           <div className=" order-item flex flex-col items-center  p-2">
             <div className="flex text-left w-[85%] mr-[10%] p-4 border-b-[1px]">
               <h1 className="text-2xl font-medium	pb-4 flex">
@@ -103,7 +102,7 @@ function Cart() {
             <Scrollbars>
               {cartItem.map((item, key) => (
                 <div
-                  className="ordered-items flex justify-between p-2.5 m-3 w-[450px] h-[160px] border-b-[1px]"
+                  className="ordered-items flex justify-between p-2.5 m-3 w-[450px] h-[160px] border-b-[1px] "
                   key={key}
                 >
                   <div className="ordered-items-img">
@@ -117,7 +116,7 @@ function Cart() {
                     <div>
                       <h2 className="font-medium">{item.title}</h2>
                       <p className="item-description">{item.description}</p>
-                      <h4>{(item.price * item.quantity).toFixed(2)} $ </h4>
+                      <h4>{(item.price * item.quantity).toFixed(2)} € </h4>
                     </div>
                     <div className="flex justify-between p-2">
                       <div>
@@ -160,12 +159,19 @@ function Cart() {
             </h2>
             <div className="order-container">
               <div className="ordered-details flex justify-between w-full my-3 text-[17px] font-medium ">
-                <p>Amount: {totalItems} items</p>
+                <p>Total Amount:</p>
+                <p>{totalItems} </p>
               </div>
               <div className="ordered-details flex justify-between w-full my-3 text-[18px] font-medium ">
-                <p>Total Price: {totalPrice}€</p>
+                <p>Total Price: </p>
+                <p>{totalPrice}€</p>
               </div>
-              <p className="text-end my-3">(Prices are inclusive all taxes)</p>
+              <p></p>
+              <p className="text-end my-3">
+                {" "}
+                Shipping Fee 5 € <br />
+                <span>(Prices are inclusive all taxes)</span>
+              </p>
             </div>
             <Link to="/checkout">
               <button

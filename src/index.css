@@ -6,50 +6,38 @@
   margin: 0;
   box-sizing: border-box;
 }
-.top-navbar {
+.top-nav-container {
   height: 44px;
   background-color: #202020;
   display: flex;
+}
+.top-navbar {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
   color: white;
-  padding: 10px 40px;
+  width: 80%;
+  margin: 0 auto;
 }
 .navbar {
-  /* background-color: #1c2938; */
   background-color: #ffffff;
   text-transform: uppercase;
   color: tomato;
   display: flex;
   justify-content: space-around;
-  /* padding: 6px; */
+  align-items: center;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.navbar a{
-  height: 100%;
-  background-color: #f1bc31;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  border-radius: 5px;
+.nav-link {
+  padding: 30px 20px;
+  transition: all 0.5s ease-in-out;
 }
-/* .nav-text:hover {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  left: 0;
+.nav-home-link {
   background-color: #f1bc31;
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  -ms-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.2s ease-in-out 0s;
-  -o-transition: all 0.2s ease-in-out 0s;
-  transition: all 0.2s ease-in-out 0s;
-  z-index: -1;
-} */
+  color: white;
+  padding: 30px 25px;
+}
+
 .shopping-cart-btn {
   display: flex;
   justify-content: center;
