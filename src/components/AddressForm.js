@@ -4,11 +4,6 @@ import { Link } from "react-router-dom";
 const AddressForm = () => {
   return (
     <div>
-      <div className="shopping-cart-btn ">
-        <button className="button">Review order</button>
-        <button className="button">Shipping address</button>
-        <button className="button">Payment details</button>
-      </div>
       <form className="reservationForm p-6 m-10 max-w-5xl h-fit mx-auto">
         <p className=" my-4 mx-auto text-[16px]">
           Almost there! Please fill the form to complete the process.

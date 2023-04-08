@@ -86,12 +86,6 @@ function Cart() {
             </h2>
           </Link>
         </div>
-        <div className="shopping-cart-btn ">
-          <button className="button">Review order</button>
-          <button className="button">Shipping address</button>
-          <button className="button">Payment details</button>
-        </div>
-
         <div className="cart-container ">
           <div className=" order-item flex flex-col items-center  p-2">
             <div className="flex text-left w-[85%] mr-[10%] p-4 border-b-[1px]">
@@ -174,10 +168,7 @@ function Cart() {
               </p>
             </div>
             <Link to="/checkout">
-              <button
-                className="bg-[#202938] py-2.5 px-4 my-8 w-full text-white hover:bg-[#f1bc31] "
-                // onClick={() => passData(totalPrice)}
-              >
+              <button className="bg-[#202938] py-2.5 px-4 my-8 w-full text-white hover:bg-[#f1bc31] ">
                 PROCEED TO CHECKOUT
               </button>
             </Link>

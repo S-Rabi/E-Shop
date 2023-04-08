@@ -6,6 +6,7 @@ import CartProvider from "./CartContext";
 import Cart from "./components/Cart";
 import AddressForm from "./components/AddressForm";
 import Payment from "./components/Payment";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<AddressForm />} />
             <Route path="/pay" element={<Payment />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </BrowserRouter>
       </CartProvider>

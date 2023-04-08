@@ -4,13 +4,8 @@ export const CartContext = createContext();
 
 export function CartProvider({ children }) {
   const [cartItem, setCartItem] = useState([]);
-  const [ totalItems, setTotalItems ] = useState(0);
-  const [ totalPrice, setTotalPrice ] = useState(0);
-  const [ discounted, setDiscounted ] = useState(0);
+  const [discounted, setDiscounted] = useState(0);
   const [filter, setFilter] = useState("");
-  // const [ couponInput, setCouponInput ] = useState("");
-  // const [ couponApplied, setCouponApplied ] = useState(false);
-
 
   const addToCart = (el) => {
     const itemsInCart = cartItem.find((i) => i.id === el.id);

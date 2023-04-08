@@ -27,9 +27,11 @@ export const Products = () => {
         <div className="flex flex-wrap justify-center">
           {data
             .filter((item) => {
-              return (filter === ""
+              return filter.trim() === ""
                 ? item
-                : (item.title.toLowerCase().includes(filter.toLowerCase()) ? item : null));
+                : item.title.toLowerCase().includes(filter.toLowerCase())
+                ? item
+                : null;
             })
             .map((post) => (
               <div key={post.id}>
