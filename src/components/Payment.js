@@ -24,11 +24,6 @@ export default function Basic() {
 
   return (
     <div className="payment ">
-      <div className="shopping-cart-btn ">
-        <button className="button">Review order</button>
-        <button className="button">Shipping address</button>
-        <button className="button">Payment details</button>
-      </div>
       <div class="relative mx-auto w-full bg-white">
         <div class="grid min-h-screen grid-cols-10">
           <div class="col-span-full py-6 px-4 sm:py-12 lg:col-span-6 lg:py-24">

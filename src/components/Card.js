@@ -10,7 +10,7 @@ function Card({ el }) {
     <div>
       <div class="relative m-8 flex w-[230px] flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md ">
         <div class="relative mx-2 mt-2 flex h-40 overflow-hidden rounded-lg ">
-          <img class="object-cover mx-auto" src={el.image} />
+          <img class="object-cover mx-auto" src={el.image} alt="itemImage" />
         </div>
         <div class="mt-2 px-4 pb-4">
           <h2 class="text-l truncate font-medium text-slate-900">{el.title}</h2>
