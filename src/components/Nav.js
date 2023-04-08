@@ -8,7 +8,7 @@ import { IoCallSharp } from "react-icons/io5";
 import { GoSearch } from "react-icons/go";
 import { CartContext } from "../CartContext";
 import { useContext } from "react";
-import Logo from "../assets/1.png";
+import Logo from "../assets/logo2.png";
 //---------------------------------------
 
 const Nav = () => {

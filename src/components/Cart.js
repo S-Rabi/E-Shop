@@ -50,12 +50,15 @@ function Cart() {
 
   // Clear the cart
   const handleClearCart = () => {
-    setCartItem([]);
+    const result = window.confirm("Are you sure you want to clear the cart?");
+    if (result) {
+      setCartItem([]);
+    }
   };
 
   // Apply Coupon
   const applyCoupon = () => {
-    if (couponInput === "B" && !couponApplied) {
+    if (couponInput === "Shopilla" && !couponApplied) {
       const discountedPrice = (totalPrice * 0.8).toFixed(2);
       setTotalPrice(discountedPrice);
       setCouponApplied(true);
@@ -162,8 +165,6 @@ function Cart() {
               </div>
               <p></p>
               <p className="text-end my-3">
-                {" "}
-                Shipping Fee 5 € <br />
                 <span>(Prices are inclusive all taxes)</span>
               </p>
             </div>

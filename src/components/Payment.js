@@ -1,7 +1,9 @@
 import React from "react";
 import { useContext } from "react";
 import { CartContext } from "../CartContext";
+import { BiArrowBack } from "react-icons/bi";
 
+import { Link } from "react-router-dom";
 export default function Basic() {
   const { cartItem, discounted } = useContext(CartContext);
   console.log("cartItem", cartItem);
@@ -24,6 +26,14 @@ export default function Basic() {
 
   return (
     <div className="payment ">
+      <div className="mx-[40px] ml-[40px]">
+        <Link to="/checkout">
+          <h2 className="m-4 p-4 font-medium flex text-center items-center">
+            <BiArrowBack />
+            &nbsp; Changing Your Address
+          </h2>
+        </Link>
+      </div>
       <div class="relative mx-auto w-full bg-white">
         <div class="grid min-h-screen grid-cols-10">
           <div class="col-span-full py-6 px-4 sm:py-12 lg:col-span-6 lg:py-24">
@@ -113,13 +123,13 @@ export default function Basic() {
                 </div>
               </form>
               <p class="mt-10 text-center text-sm font-semibold text-gray-500">
-                By placing this order you agree to the{" "}
-                {/* <a
-                    href="#"
-                    class="whitespace-nowrap text-teal-400 underline hover:text-teal-600"
-                  >
-                    Terms and Conditions
-                  </a> */}
+                By placing this order you agree to the
+                <a
+                  href=""
+                  class="whitespace-nowrap text-teal-400 underline hover:text-teal-600"
+                >
+                  Terms and Conditions
+                </a>
               </p>
               <button
                 type="submit"
@@ -140,11 +150,11 @@ export default function Basic() {
                   <p>Total Items: {totalItems}</p>
                 </div>
                 <div className="ordered-details flex justify-between w-full my-3 text-[18px] font-medium ">
-                  <p>Total Price is: {totalPrice}€</p>
+                  <p>Total Price: {totalPrice}€</p>
                 </div>
                 {discounted > 0 && (
                   <div className="ordered-details flex justify-between w-full my-3 text-[18px] font-medium ">
-                    <p>Final Price is: {finalPrice}€</p>
+                    <p>Price with DISCOUNT: {finalPrice}€</p>
                   </div>
                 )}
                 <p className="text-end my-3">
